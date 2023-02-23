@@ -1,0 +1,15 @@
+{
+    "name": "jaovi/carrinho",
+    "autoload": {
+        "psr-4": {
+            "Jaovi\\Carrinho\\": "src/",
+            "test\\":"test/",
+            "App\\": "App/",
+            "Exceptions\\": "exceptions/"
+            
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.6"
+    }
+}
