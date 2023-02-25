@@ -1,6 +1,6 @@
 <?php
 
-namespace Exceptions\ExceptionQuantidade;
+namespace exceptionQuantidade;
 
 use Exception;
 

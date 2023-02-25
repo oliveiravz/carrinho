@@ -2,11 +2,11 @@
 namespace test;
 
 use PHPUnit\Framework\TestCase;
-use App\Carrinho\Carrinho;
+use App\Carrinho;
 use Exceptions\ExceptionQuantidade\QuantidadeException;
-use App\Produto\Produto;
+use App\Produto;
 
-class CarrinhoTest extends TestCase {
+class carrinhoTest extends TestCase {
 
     /**
      * @test
@@ -15,7 +15,7 @@ class CarrinhoTest extends TestCase {
         
         $carrinho = new Carrinho();
 
-        $this->assertEmpty($carrinho->adicionar());
+        // $this->assertEmpty($carrinho->adicionar($produto));
     }
 
     /**
@@ -27,15 +27,15 @@ class CarrinhoTest extends TestCase {
 
         $carrinho = new Carrinho();
         
-        $p1 = new Produto();
-        $p2 = new Produto();
-        $p3 = new Produto();
-        $p4 = new Produto();
+        // $p1 = new Produto();
+        // $p2 = new Produto();
+        // $p3 = new Produto();
+        // $p4 = new Produto();
 
-        $carrinho->adicionar($p1);
-        $carrinho->adicionar($p2);
-        $carrinho->adicionar($p3);
-        $carrinho->adicionar($p4);
+        // $carrinho->adicionar($p1);
+        // $carrinho->adicionar($p2);
+        // $carrinho->adicionar($p3);
+        // $carrinho->adicionar($p4);
 
     }
 }

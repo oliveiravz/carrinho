@@ -1,14 +1,23 @@
 <?php
-
-namespace App\Produto;
+namespace App;
 
 class Produto {
 
-    private int $id;
-    private String $descricao;
-    private Float $quantidade;
+    private $id;
+    private $descricao;
+    private $quantidade;
+    private $preco;
 
-    /**
+    public function __construct(int $id, string $descricao, int $quantidade, float $preco) {
+        
+        $this->id = $id;
+        $this->descricao = $descricao;
+        $this->quantidade = $quantidade;
+        $this->preco = $preco;
+        
+    }
+    
+   /**
      * @return Int;
     */
     public function getId() {
@@ -23,10 +32,14 @@ class Produto {
     }
 
     /**
-     * @return Float
+     * @return int
      */
     public function getQuantidade() {
         return $this->quantidade;
+    }
+
+    public function getPreco() {
+        return $this->preco;
     }
 
     public function setId(int $id) {
@@ -37,8 +50,12 @@ class Produto {
         $this->descricao = $descricao;
     }
 
-    public function setQuantidade(Float $quantidade) {
+    public function setQuantidade(int $quantidade) {
         $this->quantidade = $quantidade;
+    }
+
+    public function setPreco(float $preco) {
+        $this->preco = $preco;
     }
 
 }

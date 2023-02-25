@@ -1,1 +1,0 @@
-{"version":1,"defects":{"test\\CarrinhoTest::test_verifica_carrinho_vazio":4,"test\\CarrinhoTest::test_verifica_quantidade_limite_carrinho":4},"times":{"test\\CarrinhoTest::test_verifica_carrinho_vazio":0.006,"test\\CarrinhoTest::test_verifica_quantidade_limite_carrinho":0}}
