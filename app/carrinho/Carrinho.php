@@ -2,6 +2,7 @@
 namespace App\carrinho;
 
 use App\produto\Produto;
+use exceptions\CarrinhoVazioException;
 use exceptions\QuantidadeException;
 
 class Carrinho {
@@ -12,7 +13,11 @@ class Carrinho {
      * @param object $produto
      * @return array
      */
-    public function adicionar(Produto $produto) {
+    public function adicionar(Produto $produto = null) {
+
+        if(empty($produto)) {
+            throw new CarrinhoVazioException();
+        }
 
         if($produto->getQuantidade() > 20) {
             throw new QuantidadeException();

@@ -4,12 +4,13 @@ namespace test;
 use PHPUnit\Framework\TestCase;
 use App\carrinho\Carrinho;
 use exceptions\QuantidadeException;
+use exceptions\CarrinhoVazioException;
 use App\produto\Produto;
 
 // COMANDO PARA GERAR O RELATÓRIO DA COBERTURA DE TESTE
 // XDEBUG_MODE=coverage vendor/bin/phpunit test
 
-class carrinhoTest extends TestCase {
+class CarrinhoTest extends TestCase {
 
     /**
      * @test
@@ -58,6 +59,19 @@ class carrinhoTest extends TestCase {
         $carrinho = new Carrinho();
         $carrinho->adicionar($produto);
 
+    }
+
+    /**
+     * @test
+     */
+    public function test_verifica_carrinho_vazio() {
+        
+        $this->expectException(CarrinhoVazioException::class);
+        $this->expectExceptionMessage("Adicione um produto no carrinho!");
+
+        $carrinho = new Carrinho();
+
+        $this->assertEquals(null, $carrinho->adicionar(), 'Carrinho vazio!');
     }
 
     /**
@@ -135,14 +149,10 @@ class carrinhoTest extends TestCase {
     public function test_verfica_alterar_quantidade_item() {
     
         $p1 = new Produto(1, "Teclado", 10, 200.00);
-        $p2 = new Produto(1, "Mouse", 10, 100.00);
-        $p3 = new Produto(1, "Monitor", 10, 1500.0);
 
         $carrinho = new Carrinho();
         $carrinho->adicionar($p1);
-        $carrinho->adicionar($p2);
-        $carrinho->adicionar($p3);
 
-        $this->assertEquals(35, $carrinho->alterarQuantidadeUnidadeItem(3, 35));
+        $this->assertEquals(35, $carrinho->alterarQuantidadeUnidadeItem(1, 35));
     }
 }
