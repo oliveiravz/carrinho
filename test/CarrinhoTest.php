@@ -6,7 +6,7 @@ use App\carrinho\Carrinho;
 use exceptions\QuantidadeException;
 use App\produto\Produto;
 
-// COMANDO PARA GERAR O RELATÓRIO DA COMBERTURA DE TESTE
+// COMANDO PARA GERAR O RELATÓRIO DA COBERTURA DE TESTE
 // XDEBUG_MODE=coverage vendor/bin/phpunit test
 
 class carrinhoTest extends TestCase {
@@ -18,7 +18,7 @@ class carrinhoTest extends TestCase {
         
         $p1 = new Produto(1, "Teclado", 10, 129.99);
         $p2 = new Produto(1, "Mouse", 10, 112.99);
-        $p3 = new Produto(1, "Monitor", 10, 1599.99);
+        $p3 = new Produto(1, "Monitor", 10, 1500.00);
         
         $carrinho = new Carrinho();
         $carrinho->adicionar($p1);
@@ -36,7 +36,7 @@ class carrinhoTest extends TestCase {
         
         $p1 = new Produto(1, "Teclado", 10, 200.00);
         $p2 = new Produto(1, "Mouse", 10, 100.00);
-        $p3 = new Produto(1, "Monitor", 10, 1500.0);
+        $p3 = new Produto(1, "Monitor", 10, 1500.00);
 
         $carrinho = new Carrinho();
         $carrinho->adicionar($p1);
@@ -67,7 +67,7 @@ class carrinhoTest extends TestCase {
         
         $p1 = new Produto(1, "Teclado", 10, 200.00);
         $p2 = new Produto(1, "Mouse", 10, 100.00);
-        $p3 = new Produto(1, "Monitor", 10, 1500.0);
+        $p3 = new Produto(1, "Monitor", 10, 1500.00);
 
         $carrinho = new Carrinho();
         $carrinho->adicionar($p1);
@@ -84,7 +84,7 @@ class carrinhoTest extends TestCase {
 
         $p1 = new Produto(1, "Teclado", 10, 200.00);
         $p2 = new Produto(1, "Mouse", 10, 100.00);
-        $p3 = new Produto(1, "Monitor", 10, 1500.0);
+        $p3 = new Produto(1, "Monitor", 10, 1500.00);
 
         $carrinho = new Carrinho();
         $carrinho->adicionar($p1);
@@ -101,7 +101,7 @@ class carrinhoTest extends TestCase {
         
         $p1 = new Produto(1, "Teclado", 10, 200.00);
         $p2 = new Produto(1, "Mouse", 10, 100.00);
-        $p3 = new Produto(1, "Monitor", 10, 1500.0);
+        $p3 = new Produto(1, "Monitor", 10, 1500.00);
 
         $carrinho = new Carrinho();
         $carrinho->adicionar($p1);
@@ -119,7 +119,7 @@ class carrinhoTest extends TestCase {
         
         $p1 = new Produto(1, "Teclado", 10, 200.00);
         $p2 = new Produto(1, "Mouse", 10, 100.00);
-        $p3 = new Produto(1, "Monitor", 10, 1500.0);
+        $p3 = new Produto(1, "Monitor", 10, 1500.00);
 
         $carrinho = new Carrinho();
         $carrinho->adicionar($p1);
