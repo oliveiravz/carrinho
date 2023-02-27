@@ -128,4 +128,21 @@ class carrinhoTest extends TestCase {
 
         $this->assertEquals(30, $carrinho->quantidadeUnidadePorItem());
     }
+
+    /**
+     * @test
+     */
+    public function test_verfica_alterar_quantidade_item() {
+    
+        $p1 = new Produto(1, "Teclado", 10, 200.00);
+        $p2 = new Produto(1, "Mouse", 10, 100.00);
+        $p3 = new Produto(1, "Monitor", 10, 1500.0);
+
+        $carrinho = new Carrinho();
+        $carrinho->adicionar($p1);
+        $carrinho->adicionar($p2);
+        $carrinho->adicionar($p3);
+
+        $this->assertEquals(35, $carrinho->alterarQuantidadeUnidadeItem(3, 35));
+    }
 }

@@ -37,6 +37,22 @@ class Carrinho {
     }
 
     /**
+     * @param int $id
+     * @param int $novaQuantidade
+     * void
+     */
+    public function alterarQuantidadeUnidadeItem(int $id, int $novaQuantidade = null) {
+
+        if(isset($this->produtos)) {
+            for ($i=0; $i < count($this->produtos); $i++) { 
+                if($this->produtos[$i]->getId() == $id) {
+                    $this->produtos[$i]->setQuantidade($novaQuantidade);
+                }
+            }   
+        }
+    }
+
+    /**
      * @return int
      */
     public function totalItensCarrinho() {
